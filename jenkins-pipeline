@@ -14,21 +14,21 @@ pipeline {
         }
         stage('Terraform Init') {
             steps {
-                dir('projectfiles') {
+                dir('vpc-asg-alb') {
                     sh 'terraform init'
                 }
             }
         }
         stage('Terraform Plan') {
             steps {
-                dir('projectfiles') {
+                dir('vpc-asg-alb') {
                     sh 'terraform plan'
                 }
             }
         }
         stage('Terraform Apply') {
             steps {
-                dir('projectfiles') {
+                dir('vpc-asg-alb') {
                     sh 'terraform apply -auto-approve'
                 }
             }
